@@ -4,6 +4,10 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 
 ## Development server
 
+install boostrap, bootstrap icon
+```bash
+npm install bootstrap bootstrap-icons
+```
 To start a local development server, run:
 
 ```bash
