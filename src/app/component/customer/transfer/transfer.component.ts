@@ -7,6 +7,7 @@ import { TransferRequest } from 'model/transferRequest';
 import { UserDetailService } from '../../service/userdetailservice';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-transfer',
   templateUrl: './transfer.component.html',
@@ -68,41 +69,41 @@ export class TransferComponent {
   }
 
   onTransferSubmit(){
-    this.loading = true;
-    this.success = false;
-    this.error = false;
+    if (this.userID) {
+      this.loading = true;
+      this.success = false;
+      this.error = false;
+      const transferRequest: TransferRequest = {
+        userId: this.userID,
+        amount: this.form.value.transferAmount,
+        sourceAccount: this.form.value.sourceAccount.accountId,
+        destinationAccount: this.form.value.destinationAccount.accountId,
+        pin: this.form.value.pin
+      };
 
-    const transferRequest: TransferRequest = {
-      userId: '1234567890124',
-      amount: this.form.value.transferAmount,
-      sourceAccount: this.form.value.sourceAccount.accountId,
-      destinationAccount: this.form.value.destinationAccount.accountId,
-      pin: this.form.value.pin
-    };
-
-    const requestModel: TransferRequestParams = {
-      transferRequest: transferRequest
-    }
-
-    const simulateWait = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
-
-    this.transactionService.transfer(requestModel).subscribe({
-      next: async (response) => {
-        await simulateWait(2000);
-        this.success = true;
-        this.error = false;
-        this.form.reset();
-        this.loading = false;
-        this.isVerified = false;
-      },
-      error: async (error) => {
-        await simulateWait(2000); 
-        this.success = false;
-        this.error = true;
-        this.loading = false;
+      const requestModel: TransferRequestParams = {
+        transferRequest: transferRequest
       }
-    });
-    
+
+      const simulateWait = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+
+      this.transactionService.transfer(requestModel).subscribe({
+        next: async (response) => {
+          await simulateWait(3000);
+          this.success = true;
+          this.error = false;
+          this.form.reset();
+          this.loading = false;
+          this.isVerified = false;
+        },
+        error: async (error) => {
+          await simulateWait(3000); 
+          this.success = false;
+          this.error = true;
+          this.loading = false;
+        }
+      });
+    }
   }
 
   loadAccount(): void {
