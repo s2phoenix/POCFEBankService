@@ -1,0 +1,48 @@
+
+<div class="d-flex justify-content-center align-items-center min-vh-100 bg-light">
+  <div class="card shadow-lg p-4" style="width: 100%;">
+    <div class="container mt-4">
+    <h2 class="text-center mb-4 text-primary">Customer Statement</h2>
+
+    <div *ngFor="let account of statements">
+        <!-- Toggle Button -->
+        <div class="d-flex justify-content-between align-items-center mb-2 bg-light p-2 border rounded">
+            <strong>Account: {{ account.account }}</strong>
+            <button class="btn btn-sm btn-outline-primary" (click)="toggle(account)">
+                <i class="bi" [ngClass]="account.show ? 'bi-chevron-up' : 'bi-plus'"></i>
+            </button>
+        </div>
+
+        <!-- Transaction Table -->
+        <table class="table table-striped table-bordered mb-4" *ngIf="account.show && account.transactions.length > 0">
+        <thead class="table-primary">
+            <tr>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Code</th>
+            <th>Channel</th>
+            <th>Debit/Credit</th>
+            <th>Balance</th>
+            <th>Remark</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let txn of account.transactions">
+            <td>{{ txn.date }}</td>
+            <td>{{ txn.time }}</td>
+            <td>{{ txn.code }}</td>
+            <td>{{ txn.channel }}</td>
+            <td>{{ txn.debitCredit }}</td>
+            <td>{{ txn.balance }}</td>
+            <td>{{ txn.remark }}</td>
+            </tr>
+        </tbody>
+        </table>
+
+        <div *ngIf="account.show && account.transactions.length === 0" class="text-muted mb-4">
+        No transactions for this account.
+        </div>
+    </div>
+    </div>
+</div>
+</div>
