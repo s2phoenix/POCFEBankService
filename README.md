@@ -36,4 +36,6 @@ This project was generated using [**Angular CLI**](https://github.com/angular/an
 ```bash
 npm install bootstrap bootstrap-icons
 
+---
+
 ## TO BE CONTINUED...
