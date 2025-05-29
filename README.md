@@ -13,7 +13,7 @@ The main purpose is to demonstrate how to:
 
 When logging in with different users, the menu will adapt according to the assigned role:
 
-- `PREREGISTER`
+- `PREREGIS`
 - `CUSTOMER`
 - `TELLER`
 
@@ -36,6 +36,6 @@ This project was generated using [**Angular CLI**](https://github.com/angular/an
 ```bash
 npm install bootstrap bootstrap-icons
 
----
+----
 
-## TO BE CONTINUED...
+![To Be Continued](https://upload.wikimedia.org/wikipedia/commons/3/3e/To_Be_Continued_JoJo.png)
