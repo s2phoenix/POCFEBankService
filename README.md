@@ -1,24 +1,37 @@
-# FE for test Bankservice
+# Frontend for Test: **POCBankService**
 
-:D I create this by no fashion css. the main purpose for this project is how to apply generate Typescript and how to call it.
+😀 This project was created **without a CSS framework**.  
+The main purpose is to demonstrate how to:
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.11.
+- Apply **generated TypeScript APIs**
+- Call backend services effectively
+- Display menus dynamically based on **user roles**
 
-## Development server
-
-install boostrap, bootstrap icon
-```bash
-npm install bootstrap bootstrap-icons
-```
-To start a local development server, run:
-
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-## Next Features to Implement
-1. Make IT Beautifull haha.
 ---
 
-## TO BE CONTINUED...
+## 👥 Role-based Menu Display
+
+When logging in with different users, the menu will adapt according to the assigned role:
+
+- `PREREGIS`
+- `CUSTOMER`
+- `TELLER`
+
+---
+
+## 🚀 Technologies Used
+
+- Angular (v19.2.11)
+- Role-based routing and response handling
+- TypeScript code generation from backend definitions
+
+This project was generated using [**Angular CLI**](https://github.com/angular/angular-cli) version `19.2.11`.
+
+---
+
+## 🛠 Development Setup
+
+### 1. Install Dependencies
+
+```bash
+npm install bootstrap bootstrap-icons
