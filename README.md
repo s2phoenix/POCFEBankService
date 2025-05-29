@@ -13,7 +13,7 @@ The main purpose is to demonstrate how to:
 
 When logging in with different users, the menu will adapt according to the assigned role:
 
-- `PREREGIS`
+- `PREREGISTER`
 - `CUSTOMER`
 - `TELLER`
 
