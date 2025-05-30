@@ -6,28 +6,21 @@
     <button *ngIf="!userRole" (click)="goToLogin()" class="btn btn-lg btn-primary mx-2 mb-3 shadow">
       Login
     </button>
-
-    <!-- Person Register Button -->
     <button *ngIf="userRole !== 'CUSTOMER' && userRole !== 'TELLER'" (click)="goToRegister()" class="btn btn-lg btn-primary mx-2 mb-3 shadow">
       Person Register
     </button>
 
-    <!-- Teller Deposit/Withdraw Button -->
     <button *ngIf="userRole === 'TELLER'" (click)="goToTellerCreateAccount()" class="btn btn-lg btn-success mx-2 mb-3 shadow">
       Customer Register
     </button>
 
-    <!-- Teller Deposit Button -->
     <button *ngIf="userRole === 'TELLER'" (click)="goToTellerDeposit()" class="btn btn-lg btn-secondary mx-2 mb-3 shadow">
       Teller Deposit
     </button>
-
-    <!-- Customer Statement Button -->
     <button *ngIf="userRole === 'CUSTOMER'" (click)="goToCustomerStatement()" class="btn btn-lg btn-success mx-2 mb-3 shadow">
       Customer Statement
     </button>
 
-    <!-- Customer Transfer Button -->
     <button *ngIf="userRole === 'CUSTOMER'" (click)="goToCustomerTrnasfer()" class="btn btn-lg btn-success mx-2 mb-3 shadow">
       Customer Transfer
     </button>
@@ -37,7 +30,6 @@
     </button>
   </div>
 
-  <!-- Display User Info (UserID and Role) -->
   <div class="user-details mt-5 text-center">
     <p *ngIf="userID && userRole" class="text-info">
       <strong>User ID:</strong> {{ userID }} <br />
