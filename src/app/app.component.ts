@@ -11,20 +11,21 @@ import { UserDetailService } from './component/service/userdetailservice';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  userID: string | null = null; 
+  title = 'febankservice';
+  userID: string | null = null;
   userRole: string | null = null;
 
   constructor(private router: Router, private userDetailService: UserDetailService) {
     userDetailService.getUserDetails().subscribe((userInfo) => {
-      this.userID = userInfo?.userId ?? null; 
-      this.userRole = userInfo?.role ?? null; 
+      this.userID = userInfo?.userId ?? null;
+      this.userRole = userInfo?.role ?? null;
     });
   }
 
   goToLogin() {
     this.router.navigate(['/']);
   }
-  
+
   goToRegister() {
     this.router.navigate(['/preregister']);
   }
@@ -51,7 +52,7 @@ export class AppComponent {
 
   logout(): void {
     localStorage.removeItem('accessToken');
-    localStorage.removeItem('refreshToken'); 
-    this.router.navigate(['/']); 
+    localStorage.removeItem('refreshToken');
+    this.router.navigate(['/']);
   }
 }
